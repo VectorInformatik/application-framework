@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ee53c31d-0005-4f0e-b6b7-27f6d5836a93">
+      <SHORT-NAME>AUTOSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="b81d2006-993b-4c14-92e7-15eddcb449f5">
+          <SHORT-NAME>StdTypes</SHORT-NAME>
+          <ELEMENTS>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="32274ec3-e4b5-41c7-a22d-1492f00257c1">
+              <SHORT-NAME>bool</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="af56b56f-0e08-4cb9-a594-d30a9528be92">
+              <SHORT-NAME>float</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="f9809f9e-545e-4589-9bb6-ebb9f6a4bb52">
+              <SHORT-NAME>double</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="96f96ca0-c8ae-457e-a3cd-987abb3cbf28">
+              <SHORT-NAME>int8_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="8459590b-8e0f-4dd3-88a2-06ad1b40d16e">
+              <SHORT-NAME>int16_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="874913c3-edf6-4834-ba8f-a2e503615982">
+              <SHORT-NAME>int32_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="cf2edd95-9d1d-4abb-82ff-b7ecfc06773f">
+              <SHORT-NAME>int64_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="87fe5ff8-0002-4596-8e7f-4c4b62f41eff">
+              <SHORT-NAME>uint8_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="c1ba95b1-3260-44a7-a533-5af8d40be5ad">
+              <SHORT-NAME>uint16_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="1cdf2000-cb5a-414d-b9cc-8dea55e4f933">
+              <SHORT-NAME>uint32_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="2307947c-321b-4956-8f56-c75d42383972">
+              <SHORT-NAME>uint64_t</SHORT-NAME>
+              <CATEGORY>VALUE</CATEGORY>
+              <HEADER-FILE>cstdint</HEADER-FILE>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

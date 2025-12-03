@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="4155f84f-8c3e-40ef-aee9-e41c91ff6b97">
+      <SHORT-NAME>AppDesign</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="63b89019-33fe-4ae7-9a0a-006e5a0593e0">
+          <SHORT-NAME>AASwCompType_App_ModelBuilderApplication_HvacPlatform</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="2d84b6e8-3a06-4ec4-8b1a-0f06fdc83305">
+              <SHORT-NAME>HvacStatus</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="b1c95f0f-75a5-4af4-875f-bb9cfbe29933">
+              <SHORT-NAME>HvacControl</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+        <EXECUTABLE UUID="8b4e9003-68d8-4898-9715-7b6ae56d7b41">
+          <SHORT-NAME>HvacPlatform</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:BswVersionedApi">
+                <SD GID="amsrAraComApi">r20_11</SD>
+                <SD GID="amsrAraCoreApi">r20_11</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="f0d21994-b451-4099-ab47-a7600d959be8">
+            <SHORT-NAME>RootSwcPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AppDesign/AASwCompType_App_ModelBuilderApplication_HvacPlatform</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+          <VERSION>1.0.0</VERSION>
+        </EXECUTABLE>
+        <PROCESS-DESIGN UUID="624247fa-9fa9-4801-aa9d-0bef48a3b669">
+          <SHORT-NAME>PrcDesign_App_ModelBuilderApplication_HvacPlatform</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/AppDesign/HvacPlatform</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN UUID="abb5fe68-c612-4333-ad8f-cfb6178ffb8e">
+          <SHORT-NAME>SwClDesign_App_ModelBuilderApplication</SHORT-NAME>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS-DESIGN">/AppDesign/PrcDesign_App_ModelBuilderApplication_HvacPlatform</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+        </SOFTWARE-CLUSTER-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,16 @@
+
+{
+  "version" : "1.00.00",
+  "app" : {
+    "name" : "process_of_adas_demo_app",
+    "id" : "vTSA",
+    "descr" : "StandardApp",
+    "version" : "",
+    "level" : "info"
+  },
+  "sinks" : {
+    "file" : {
+      "file-path" : "../../../../../../TestRun/AppLogger.log"
+    }
+  }
+}

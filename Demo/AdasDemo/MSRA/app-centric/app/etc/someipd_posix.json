@@ -1,0 +1,6 @@
+{
+  "applications": [
+      "../adas_demo_app/etc/someip_config.json",
+      "../../../../../../AdasPlatform/build/Release/install/opt/adas_platform_app/etc/someip_config.json"
+    ]
+}

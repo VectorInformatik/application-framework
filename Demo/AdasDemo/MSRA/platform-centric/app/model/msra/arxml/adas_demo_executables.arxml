@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="9674aed7-b176-4759-adad-c39c6286c5ce">
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="b8b75ffe-1c94-407c-9148-a8ea881226f0">
+          <SHORT-NAME>adas_application</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="b826bd1f-0a6c-4c24-8a00-bb712128fd9a">
+              <SHORT-NAME>adas_application_app</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>PPort_BrakeService</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/vector/AdasDemo/cm/ServiceInterfaces/BrakeService</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>RPort_ImageService1</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/vector/AdasDemo/cm/ServiceInterfaces/ImageService</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>RPort_ImageService2</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/vector/AdasDemo/cm/ServiceInterfaces/ImageService</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>RPort_VelocityService</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/vector/AdasDemo/cm/ServiceInterfaces/VelocityService</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>RPort_SteeringAngleService</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/vector/AdasDemo/cm/ServiceInterfaces/SteeringAngleService</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <EXECUTABLE UUID="f2e428b7-ef73-462b-a110-66056a55d938">
+              <SHORT-NAME>adas_application</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE>
+                <SHORT-NAME>rootSwc</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/vector/adas_application/adas_application_app</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+            <PROCESS-DESIGN UUID="a568842f-7e12-4bec-887a-a91381241b29">
+              <SHORT-NAME>adas_application_process_design</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/vector/adas_application/adas_application</EXECUTABLE-REF>
+            </PROCESS-DESIGN>
+            <PROCESS UUID="19ddb0b6-b1b9-4943-96c1-592b9f294d6c">
+              <SHORT-NAME>adas_application_process</SHORT-NAME>
+              <DESIGN-REF DEST="PROCESS-DESIGN">/vector/adas_application/adas_application_process_design</DESIGN-REF>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/vector/adas_application/adas_application</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="a781c7b7-6f3a-46e4-afda-d153dae332c6">
+                <SHORT-NAME>adas_demo_app_processProcessStatesPrototype</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/vector/Machine/MachineStates</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/vector/Machine/AdasDemoMachine_FunctionGroupSet/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/vector/Machine/MachineStates/Running</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/vector/Machine/AdasDemoMachine_FunctionGroupSet/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/vector/Machine/MachineStates/Startup</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/vector/adas_application/adas_application_startup_config_set/adas_demod_startup_config</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+            <SOFTWARE-CLUSTER UUID="01bbf05b-96f1-4232-b178-58d3a4b5f3cd">
+              <SHORT-NAME>adas_application_software_cluster</SHORT-NAME>
+              <CATEGORY>PLATFORM_CORE</CATEGORY>
+              <CLAIMED-FUNCTION-GROUP-REFS>
+                <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/vector/Machine/AdasDemoMachine_FunctionGroupSet/MachineFG</CLAIMED-FUNCTION-GROUP-REF>
+              </CLAIMED-FUNCTION-GROUP-REFS>
+              <CONTAINED-PROCESS-REFS>
+                <CONTAINED-PROCESS-REF DEST="PROCESS">/vector/adas_application/adas_application_process</CONTAINED-PROCESS-REF>
+              </CONTAINED-PROCESS-REFS>
+              <VERSION>1.0.0</VERSION>
+            </SOFTWARE-CLUSTER>
+            <STARTUP-CONFIG-SET UUID="599b9e8b-4e9b-48f0-a1de-e21945d5ad1a">
+              <SHORT-NAME>adas_application_startup_config_set</SHORT-NAME>
+              <STARTUP-CONFIGS>
+                <STARTUP-CONFIG UUID="6330565a-1693-4726-a160-8329d9c78856">
+                  <SHORT-NAME>adas_demod_startup_config</SHORT-NAME>
+                  <PROCESS-ARGUMENTS>
+                    <PROCESS-ARGUMENT>
+                      <ARGUMENT>-c</ARGUMENT>
+                    </PROCESS-ARGUMENT>
+                    <PROCESS-ARGUMENT>
+                      <ARGUMENT>./etc/adas_demod-posix.json</ARGUMENT>
+                    </PROCESS-ARGUMENT>
+                  </PROCESS-ARGUMENTS>
+                  <SCHEDULING-POLICY>SCHED_FIFO</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>12</SCHEDULING-PRIORITY>
+                </STARTUP-CONFIG>
+              </STARTUP-CONFIGS>
+            </STARTUP-CONFIG-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

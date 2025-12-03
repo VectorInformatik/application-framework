@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProjectAssistant DpaSchemaVersion="00.04" InitiallyCreatedWithToolVersion="2.15.12.1769f87" MsrPlatform="adaptive" uuid="d03b91da-828d-4b73-a1e7-235d19c6a56e">
+    <General>
+        <Name>AdasApplication</Name>
+        <Version>1.0</Version>
+        <Author>cmarchl</Author>
+        <Description></Description>
+    </General>
+    <CompatibilityVersion>
+        <Current>1.2.2</Current>
+        <AsrMdfRevision>R049</AsrMdfRevision>
+    </CompatibilityVersion>
+    <Environment>
+        <SipId>Adaptive-BSW-Package</SipId>
+    </Environment>
+    <Folders>
+        <Logs>./log</Logs>
+        <ARXML>../arxml</ARXML>
+        <Scripts>../scripts</Scripts>
+    </Folders>
+    <Properties>
+        <ReadOnly>false</ReadOnly>
+    </Properties>
+    <ProjectReferences/>
+    <ToolSettings>
+        <Generators>
+            <Settings Name="com.vector.cfg.gui.core.generators.GenerationTarget">
+                <Setting Value="Real Target" Name="TargetType"/>
+            </Settings>
+        </Generators>
+    </ToolSettings>
+</ProjectAssistant>

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="9674aed7-b176-4759-adad-c39c6286c5ce">
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="2891220d-83ca-443b-8a47-63749df4849b">
+          <SHORT-NAME>Machine</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="1275b040-9b38-4d73-a8e2-214fcdc1c313">
+              <SHORT-NAME>mappings</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS-TO-MACHINE-MAPPING-SET UUID="5d53b0f9-8466-4ae9-9584-f0be26e2df90">
+                  <SHORT-NAME>adas_demo_Process_MachineMappingSet</SHORT-NAME>
+                  <PROCESS-TO-MACHINE-MAPPINGS>
+                    <PROCESS-TO-MACHINE-MAPPING UUID="b5f9859a-49a1-46e6-938a-1bf98cfab665">
+                      <SHORT-NAME>adas_demo_test_app_process_toMachine</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/vector/Machine/AdasDemoMachine</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/vector/adas_platform/adas_platform_process</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                  </PROCESS-TO-MACHINE-MAPPINGS>
+                </PROCESS-TO-MACHINE-MAPPING-SET>
+                <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="fa44028f-38f8-462b-9006-bfe542fd276e">
+                  <SHORT-NAME>DltLogChannelToProcessMapping</SHORT-NAME>
+                  <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/vector/Machine/AdasDemoMachine/AdasDemoLogAndTrace/AdasDemoLogChannel</DLT-LOG-CHANNEL-REF>
+                  <PROCESS-REF DEST="PROCESS">/vector/adas_platform/adas_platform_process</PROCESS-REF>
+                </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="d9f1eaf6-faa9-4c2c-b69b-6ff142029602">
+          <SHORT-NAME>AdasDemo</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="e500acee-85c4-4057-96f7-0729e3ce8f05">
+              <SHORT-NAME>cm</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="7be05b4c-e017-4d0f-8d95-f3ae675065af">
+                  <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SERVICE-INTERFACE>
+                      <SHORT-NAME>ImageService</SHORT-NAME>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>AF</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>adas_demo_app</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns2</SHORT-NAME>
+                          <SYMBOL>services</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <EVENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>camera_image</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/Image</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </EVENTS>
+                      <FIELDS>
+                        <FIELD>
+                          <SHORT-NAME>image_scaling_factor</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint64_t</TYPE-TREF>
+                          <HAS-GETTER>true</HAS-GETTER>
+                          <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                          <HAS-SETTER>true</HAS-SETTER>
+                        </FIELD>
+                      </FIELDS>
+                      <METHODS>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>GetImageSize</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>width</SHORT-NAME>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>height</SHORT-NAME>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                        </CLIENT-SERVER-OPERATION>
+                      </METHODS>
+                    </SERVICE-INTERFACE>
+                    <SERVICE-INTERFACE>
+                      <SHORT-NAME>BrakeService</SHORT-NAME>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>AF</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>adas_demo_app</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns2</SHORT-NAME>
+                          <SYMBOL>services</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <EVENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>brake_action</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/BrakePressure</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </EVENTS>
+                      <FIELDS>
+                        <FIELD>
+                          <SHORT-NAME>brake_summand_coefficient</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint64_t</TYPE-TREF>
+                          <HAS-GETTER>true</HAS-GETTER>
+                          <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                          <HAS-SETTER>true</HAS-SETTER>
+                        </FIELD>
+                      </FIELDS>
+                      <METHODS>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>SumTwoSummands</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>summand_one</SHORT-NAME>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>summand_two</SHORT-NAME>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>sum</SHORT-NAME>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                        </CLIENT-SERVER-OPERATION>
+                      </METHODS>
+                    </SERVICE-INTERFACE>
+                    <SERVICE-INTERFACE>
+                      <SHORT-NAME>VelocityService</SHORT-NAME>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>AF</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>adas_demo_app</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns2</SHORT-NAME>
+                          <SYMBOL>services</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <EVENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>car_velocity</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/Velocity</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </EVENTS>
+                      <METHODS>
+                        <CLIENT-SERVER-OPERATION UUID="c4c91ee1-af28-4b62-b588-450658712fc6">
+                          <SHORT-NAME>SetVelocity</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE UUID="b401cbc8-d88f-4169-bf6b-77e9c1f9153f">
+                              <SHORT-NAME>velocity</SHORT-NAME>
+                              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint32_t</TYPE-TREF>
+                              <DIRECTION>IN</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <FIRE-AND-FORGET>true</FIRE-AND-FORGET>
+                        </CLIENT-SERVER-OPERATION>
+                      </METHODS>
+                    </SERVICE-INTERFACE>
+                    <SERVICE-INTERFACE>
+                      <SHORT-NAME>SteeringAngleService</SHORT-NAME>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>AF</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>adas_demo_app</SYMBOL>
+                        </SYMBOL-PROPS>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns2</SHORT-NAME>
+                          <SYMBOL>services</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <EVENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>steering_angle</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/SteeringAngle</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </EVENTS>
+                    </SERVICE-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>Velocity</SHORT-NAME>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>timestamp</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>velocity</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>SteeringAngle</SHORT-NAME>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>timestamp</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>steering_angle</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/AngleType</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>Image</SHORT-NAME>
+                      <CATEGORY>STRUCTURE</CATEGORY>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <SUB-ELEMENTS>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>timestamp</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint64_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>height</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>width</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>R</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/UInt8Vector</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>G</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/UInt8Vector</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                          <SHORT-NAME>B</SHORT-NAME>
+                          <TYPE-REFERENCE>
+                            <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/UInt8Vector</TYPE-REFERENCE-REF>
+                          </TYPE-REFERENCE>
+                        </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      </SUB-ELEMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>UInt8Vector</SHORT-NAME>
+                      <CATEGORY>VECTOR</CATEGORY>
+                      <ARRAY-SIZE>307200</ARRAY-SIZE>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns1</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="1d83e12b-ed69-492b-a055-38e5a3b33bba">
+                      <SHORT-NAME>BrakePressure</SHORT-NAME>
+                      <CATEGORY>ASSOCIATIVE_MAP</CATEGORY>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TEMPLATE-ARGUMENTS>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <CATEGORY>ASSOC_MAP_KEY</CATEGORY>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint64_t</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                        <CPP-TEMPLATE-ARGUMENT>
+                          <CATEGORY>ASSOC_MAP_VALUE</CATEGORY>
+                          <TEMPLATE-TYPE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/vector/AdasDemo/cm/DataTypes/PressureType</TEMPLATE-TYPE-REF>
+                        </CPP-TEMPLATE-ARGUMENT>
+                      </TEMPLATE-ARGUMENTS>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="0b51d04b-68ba-41f3-b697-82202c2cf7d8">
+                      <SHORT-NAME>PressureType</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                    <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="8f7f1b9c-ed37-426e-be7d-e1aa31bf7abc">
+                      <SHORT-NAME>AngleType</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <NAMESPACES>
+                        <SYMBOL-PROPS>
+                          <SHORT-NAME>ns0</SHORT-NAME>
+                          <SYMBOL>datatypes</SYMBOL>
+                        </SYMBOL-PROPS>
+                      </NAMESPACES>
+                      <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                      <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-REFERENCE-REF>
+                    </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="650506bc-8fe1-4197-8ce1-7ad2d1f3ef55">
+      <SHORT-NAME>deployment</SHORT-NAME>
+      <ELEMENTS>
+        <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT UUID="f7cf8eaa-38b0-430f-bb23-00ff39591ce2">
+          <SHORT-NAME>ImageServiceInterfaceDeployment</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:IpcBindingServiceInterfaceDeploymentExtension">
+                <SD GID="DvMex-version">1.0.0</SD>
+                <SDG GID="userDefinedIpcBinding">
+                  <SDG GID="IpcBindingServiceInterfaceDeployment">
+                    <SD GID="serviceInterfaceId">2</SD>
+                    <SDG GID="serviceInterfaceVersion">
+                      <SDG GID="Version">
+                        <SD GID="major">1</SD>
+                        <SD GID="minor">0</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDG>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <EVENT-DEPLOYMENTS>
+            <USER-DEFINED-EVENT-DEPLOYMENT UUID="404d91bd-c6cd-4669-bd3c-3a1702ef7307">
+              <SHORT-NAME>camera_image</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="IpcBindingEventDeployment">
+                        <SD GID="eventId">1</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/vector/AdasDemo/cm/ServiceInterfaces/ImageService/camera_image</EVENT-REF>
+            </USER-DEFINED-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <FIELD-DEPLOYMENTS>
+            <USER-DEFINED-FIELD-DEPLOYMENT>
+              <SHORT-NAME>testFieldUINT8Deployment</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/vector/AdasDemo/cm/ServiceInterfaces/ImageService/image_scaling_factor</FIELD-REF>
+              <GET>
+                <SHORT-NAME>getter</SHORT-NAME>
+                <ADMIN-DATA>
+                  <SDGS>
+                    <SDG GID="DvMex:IpcBindingMethodDeploymentExtension">
+                      <SD GID="DvMex-version">1.0.0</SD>
+                      <SDG GID="userDefinedIpcBinding">
+                        <SDG GID="IpcBindingMethodDeployment">
+                          <SD GID="methodId">16640</SD>
+                        </SDG>
+                      </SDG>
+                    </SDG>
+                  </SDGS>
+                </ADMIN-DATA>
+              </GET>
+              <NOTIFIER>
+                <SHORT-NAME>Notifier</SHORT-NAME>
+                <ADMIN-DATA>
+                  <SDGS>
+                    <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                      <SD GID="DvMex-version">1.0.0</SD>
+                      <SDG GID="userDefinedIpcBinding">
+                        <SDG GID="IpcBindingEventDeployment">
+                          <SD GID="eventId">49408</SD>
+                        </SDG>
+                      </SDG>
+                    </SDG>
+                  </SDGS>
+                </ADMIN-DATA>
+              </NOTIFIER>
+              <SET>
+                <SHORT-NAME>setter</SHORT-NAME>
+                <ADMIN-DATA>
+                  <SDGS>
+                    <SDG GID="DvMex:IpcBindingMethodDeploymentExtension">
+                      <SD GID="DvMex-version">1.0.0</SD>
+                      <SDG GID="userDefinedIpcBinding">
+                        <SDG GID="IpcBindingMethodDeployment">
+                          <SD GID="methodId">16641</SD>
+                        </SDG>
+                      </SDG>
+                    </SDG>
+                  </SDGS>
+                </ADMIN-DATA>
+              </SET>
+            </USER-DEFINED-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <USER-DEFINED-METHOD-DEPLOYMENT UUID="b7696d69-26dd-4922-a500-8fc599348990">
+              <SHORT-NAME>GetImageSize</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:IpcBindingMethodDeploymentExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="IpcBindingMethodDeployment">
+                        <SD GID="methodId">1</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/vector/AdasDemo/cm/ServiceInterfaces/ImageService/GetImageSize</METHOD-REF>
+            </USER-DEFINED-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/vector/AdasDemo/cm/ServiceInterfaces/ImageService</SERVICE-INTERFACE-REF>
+        </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

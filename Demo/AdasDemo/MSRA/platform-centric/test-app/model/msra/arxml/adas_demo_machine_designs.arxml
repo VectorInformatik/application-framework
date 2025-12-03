@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="9674aed7-b176-4759-adad-c39c6286c5ce">
+      <SHORT-NAME>vector</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="2891220d-83ca-443b-8a47-63749df4849b">
+          <SHORT-NAME>Machine</SHORT-NAME>
+          <ELEMENTS>
+            <MACHINE-DESIGN UUID="4d61287d-179c-46c5-8e71-0a5cb76159ce">
+              <SHORT-NAME>AdasDemoMachineDesign</SHORT-NAME>
+              <COMMUNICATION-CONNECTORS>
+                <ETHERNET-COMMUNICATION-CONNECTOR UUID="9928d88c-ed98-4598-a750-439a6f597970">
+                  <SHORT-NAME>EthernetConnector</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DvMex:EthernetCommunicationConnectorExtensions">
+                        <SD GID="DvMex-version">1.0.0</SD>
+                        <SD GID="keepAlive">false</SD>
+                        <SD GID="noDelay">false</SD>
+                        <SD GID="numConnections">1</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/vector/Machine/AdasDemoEthernetCluster/EthCh1/NetworkEndpoint</UNICAST-NETWORK-ENDPOINT-REF>
+                </ETHERNET-COMMUNICATION-CONNECTOR>
+              </COMMUNICATION-CONNECTORS>
+              <SERVICE-DISCOVER-CONFIGS>
+                <SOMEIP-SERVICE-DISCOVERY>
+                  <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/vector/Machine/AdasDemoEthernetCluster/EthCh1/SdMulticastEndpoint</MULTICAST-SD-IP-ADDRESS-REF>
+                  <SOMEIP-SERVICE-DISCOVERY-PORT>12330</SOMEIP-SERVICE-DISCOVERY-PORT>
+                </SOMEIP-SERVICE-DISCOVERY>
+              </SERVICE-DISCOVER-CONFIGS>
+            </MACHINE-DESIGN>
+            <MODE-DECLARATION-GROUP UUID="0bb94bce-c3a9-4e3d-9eff-187e6bd24c1b">
+              <SHORT-NAME>MachineStates</SHORT-NAME>
+              <INITIAL-MODE-REF DEST="MODE-DECLARATION">/vector/Machine/MachineStates/Off</INITIAL-MODE-REF>
+              <MODE-DECLARATIONS>
+                <MODE-DECLARATION UUID="1c92eb4b-b839-4c87-b469-588eda44f031">
+                  <SHORT-NAME>Verify</SHORT-NAME>
+                  <VALUE>5</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION UUID="d809a05b-fb00-4dd5-ac8f-a8fa3f791ede">
+                  <SHORT-NAME>Running</SHORT-NAME>
+                  <VALUE>0</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION UUID="b3142f30-290b-47f6-aaf6-339701171a97">
+                  <SHORT-NAME>Startup</SHORT-NAME>
+                  <VALUE>1</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION UUID="4798a83d-69d6-4ddb-9927-2aa911d007a0">
+                  <SHORT-NAME>Shutdown</SHORT-NAME>
+                  <VALUE>2</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION UUID="b5f109b8-d8da-4f3e-b0a5-79eb644742a9">
+                  <SHORT-NAME>Restart</SHORT-NAME>
+                  <VALUE>3</VALUE>
+                </MODE-DECLARATION>
+                <MODE-DECLARATION UUID="8adc6165-f29d-4941-81a1-a15d6dbd6089">
+                  <SHORT-NAME>Off</SHORT-NAME>
+                  <VALUE>4</VALUE>
+                </MODE-DECLARATION>
+              </MODE-DECLARATIONS>
+            </MODE-DECLARATION-GROUP>
+            <ETHERNET-CLUSTER UUID="4fc2d111-f572-4650-918a-9a1f524a6c9b">
+              <SHORT-NAME>AdasDemoEthernetCluster</SHORT-NAME>
+              <ETHERNET-CLUSTER-VARIANTS>
+                <ETHERNET-CLUSTER-CONDITIONAL>
+                  <PHYSICAL-CHANNELS>
+                    <ETHERNET-PHYSICAL-CHANNEL UUID="a9678705-de80-4eb8-bda1-fb9f9ece5d1f">
+                      <SHORT-NAME>EthCh1</SHORT-NAME>
+                      <NETWORK-ENDPOINTS>
+                        <NETWORK-ENDPOINT UUID="1e7bdf30-51fe-4d8b-b48e-391f58c8b025">
+                          <SHORT-NAME>NetworkEndpoint</SHORT-NAME>
+                          <NETWORK-ENDPOINT-ADDRESSES>
+                            <IPV-4-CONFIGURATION>
+                              <IPV-4-ADDRESS>192.168.7.2</IPV-4-ADDRESS>
+                              <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                              <TTL>5</TTL>
+                            </IPV-4-CONFIGURATION>
+                          </NETWORK-ENDPOINT-ADDRESSES>
+                        </NETWORK-ENDPOINT>
+                        <NETWORK-ENDPOINT UUID="140bd47a-914a-4cc6-9af4-7a611224f76d">
+                          <SHORT-NAME>SdMulticastEndpoint</SHORT-NAME>
+                          <NETWORK-ENDPOINT-ADDRESSES>
+                            <IPV-4-CONFIGURATION>
+                              <IPV-4-ADDRESS>224.0.0.17</IPV-4-ADDRESS>
+                            </IPV-4-CONFIGURATION>
+                          </NETWORK-ENDPOINT-ADDRESSES>
+                        </NETWORK-ENDPOINT>
+                      </NETWORK-ENDPOINTS>
+                    </ETHERNET-PHYSICAL-CHANNEL>
+                  </PHYSICAL-CHANNELS>
+                </ETHERNET-CLUSTER-CONDITIONAL>
+              </ETHERNET-CLUSTER-VARIANTS>
+            </ETHERNET-CLUSTER>
+            <FUNCTION-GROUP-SET UUID="a2b8b628-7df7-44eb-bf39-0ff4da016d7b">
+              <SHORT-NAME>AdasDemoMachine_FunctionGroupSet</SHORT-NAME>
+              <FUNCTION-GROUPS>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="25da87e7-0dab-4144-89b3-9668d8c2a979">
+                  <SHORT-NAME>MachineFG</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/vector/Machine/MachineStates</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+              </FUNCTION-GROUPS>
+            </FUNCTION-GROUP-SET>
+            <MACHINE UUID="092a5fcd-4744-48b9-a28f-690fc7a6799c">
+              <SHORT-NAME>AdasDemoMachine</SHORT-NAME>
+              <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/vector/Machine/AdasDemoMachineDesign</MACHINE-DESIGN-REF>
+              <MODULE-INSTANTIATIONS>
+                <LOG-AND-TRACE-INSTANTIATION UUID="c6dd3abd-bd34-41e0-bb2a-5e228f848cba">
+                  <SHORT-NAME>AdasDemoLogAndTrace</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DvMex:LogAndTraceInstantiationExtensions">
+                        <SD GID="ipcPort">33</SD>
+                      </SDG>
+                      <SDG GID="messageBufferSize"/>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <DLT-LOG-CHANNELS>
+                    <DLT-LOG-CHANNEL UUID="798e361b-c55d-484e-9162-436fef769266">
+                      <SHORT-NAME>AdasDemoLogChannel</SHORT-NAME>
+                      <APPLICATION-DESCRIPTION>Adas demo test app</APPLICATION-DESCRIPTION>
+                      <APPLICATION-ID>vTSA</APPLICATION-ID>
+                      <CONTEXT-DESCRIPTION>Adas demo test app</CONTEXT-DESCRIPTION>
+                      <CONTEXT-ID>default</CONTEXT-ID>
+                      <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                      <LOG-TRACE-FILE-PATH>tmp</LOG-TRACE-FILE-PATH>
+                      <LOG-TRACE-LOG-MODES>
+                        <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                      </LOG-TRACE-LOG-MODES>
+                    </DLT-LOG-CHANNEL>
+                  </DLT-LOG-CHANNELS>
+                </LOG-AND-TRACE-INSTANTIATION>
+              </MODULE-INSTANTIATIONS>
+              <PROCESSORS>
+                <PROCESSOR UUID="db57d134-a3de-4721-9aee-f7d013a93c8b">
+                  <SHORT-NAME>Processor</SHORT-NAME>
+                  <CORES>
+                    <PROCESSOR-CORE UUID="238b105e-f2a0-4803-8856-7c4325c58d97">
+                      <SHORT-NAME>Core0</SHORT-NAME>
+                      <CORE-ID>0</CORE-ID>
+                    </PROCESSOR-CORE>
+                    <PROCESSOR-CORE UUID="7c87ea5e-5163-4a7e-9eae-bc9dc8f6d615">
+                      <SHORT-NAME>Core1</SHORT-NAME>
+                      <CORE-ID>1</CORE-ID>
+                    </PROCESSOR-CORE>
+                    <PROCESSOR-CORE UUID="8d4a8240-8294-4e02-ae1c-b1ef2e074b3c">
+                      <SHORT-NAME>Core2</SHORT-NAME>
+                      <CORE-ID>2</CORE-ID>
+                    </PROCESSOR-CORE>
+                    <PROCESSOR-CORE UUID="5c6546dd-c69f-4dd0-a7ae-9c2f7ac239be">
+                      <SHORT-NAME>Core3</SHORT-NAME>
+                      <CORE-ID>3</CORE-ID>
+                    </PROCESSOR-CORE>
+                  </CORES>
+                </PROCESSOR>
+              </PROCESSORS>
+            </MACHINE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

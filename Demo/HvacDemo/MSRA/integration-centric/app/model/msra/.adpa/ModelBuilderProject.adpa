@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProjectAssistant DpaSchemaVersion="00.04" InitiallyCreatedWithToolVersion="2.16.15.c2ac08a" MsrPlatform="adaptive" uuid="e586d3b9-d837-4714-a0bf-f9bb5947f376">
+    <General>
+        <Name>ModelBuilderProject</Name>
+        <Version>1.0</Version>
+        <Author>viseue</Author>
+        <Description></Description>
+    </General>
+    <CompatibilityVersion>
+        <Current>1.2.2</Current>
+        <AsrMdfRevision>R049</AsrMdfRevision>
+    </CompatibilityVersion>
+    <Environment>
+        <SipId>Adaptive-BSW-Package</SipId>
+    </Environment>
+    <Folders>
+        <Logs>./log</Logs>
+        <ARXML>../arxml</ARXML>
+        <Scripts>../scripts</Scripts>
+    </Folders>
+    <Properties>
+        <ReadOnly>false</ReadOnly>
+    </Properties>
+    <ProjectReferences/>
+</ProjectAssistant>

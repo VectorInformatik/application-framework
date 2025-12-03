@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="5ee62f1a-0816-43a9-b602-c2694365ed58">
+      <SHORT-NAME>AppDesign</SHORT-NAME>
+      <ELEMENTS>
+        <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="61f00f3d-cbd5-4f44-b021-c548acd52d32">
+          <SHORT-NAME>AASwCompType_App_ModelBuilderApplication_HvacApplication</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="1d7ef464-4c07-4898-964a-5c01ae12e5a2">
+              <SHORT-NAME>HvacControl</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="a3586417-3f91-4624-90af-34200461da6f">
+              <SHORT-NAME>HvacStatus</SHORT-NAME>
+              <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+        </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+        <EXECUTABLE UUID="53397eac-5fbc-41ec-9f55-1cb5f6a30bc7">
+          <SHORT-NAME>HvacApplication</SHORT-NAME>
+          <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="DvMex:BswVersionedApi">
+                <SD GID="amsrAraComApi">r20_11</SD>
+                <SD GID="amsrAraCoreApi">r20_11</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <ROOT-SW-COMPONENT-PROTOTYPE UUID="947ff994-9dd9-4419-8960-590a9fd239c1">
+            <SHORT-NAME>RootSwcPrototype</SHORT-NAME>
+            <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/AppDesign/AASwCompType_App_ModelBuilderApplication_HvacApplication</APPLICATION-TYPE-TREF>
+          </ROOT-SW-COMPONENT-PROTOTYPE>
+          <VERSION>1.0.0</VERSION>
+        </EXECUTABLE>
+        <PROCESS-DESIGN UUID="f9858762-6e13-46e6-9600-4d424063c4c4">
+          <SHORT-NAME>PrcDesign_App_ModelBuilderApplication_HvacApplication</SHORT-NAME>
+          <EXECUTABLE-REF DEST="EXECUTABLE">/AppDesign/HvacApplication</EXECUTABLE-REF>
+        </PROCESS-DESIGN>
+        <SOFTWARE-CLUSTER-DESIGN UUID="5b864bd4-2998-48bc-b1ff-ac608326dae5">
+          <SHORT-NAME>SwClDesign_App_ModelBuilderApplication</SHORT-NAME>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS-DESIGN">/AppDesign/PrcDesign_App_ModelBuilderApplication_HvacApplication</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+        </SOFTWARE-CLUSTER-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

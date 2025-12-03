@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="650506bc-8fe1-4197-8ce1-7ad2d1f3ef55">
+      <SHORT-NAME>deployment</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>Provided</SHORT-NAME>
+          <ELEMENTS>
+            <PROVIDED-USER-DEFINED-SERVICE-INSTANCE UUID="90f1ce8d-c6fc-4d96-9c4e-82123d56aac0">
+              <SHORT-NAME>Provided_BrakeServiceInterfaceDeployment_service_instance</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:ProvidedIpcBindingServiceInstanceExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="ProvidedIpcBindingServiceInstance">
+                        <SD GID="serviceInstanceId">1</SD>
+                        <SD GID="serviceOfferTimeToLive">5</SD>
+                        <SD GID="domain">101</SD>
+                        <SD GID="port">101</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/deployment/BrakeServiceInterfaceDeployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+            </PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="888aa4f2-f123-4b13-b2e9-dbb55460c81b">
+              <SHORT-NAME>Mapping</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="b1ddd46c-2d76-4c8c-b47c-1dac3abed823">
+                  <SHORT-NAME>Provided_BrakeServiceInterfaceDeployment_service_instance_toPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/adas_application/adas_application/rootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/vector/adas_application/adas_application_app/PPort_BrakeService</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/vector/adas_application/adas_application_process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/deployment/Provided/Provided_BrakeServiceInterfaceDeployment_service_instance</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Required</SHORT-NAME>
+          <ELEMENTS>
+            <REQUIRED-USER-DEFINED-SERVICE-INSTANCE UUID="4ba8e4fc-177a-4ff7-af0b-eebcb2839b9a">
+              <SHORT-NAME>Required_VelocityServiceInterfaceDeployment_service_instance</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:RequiredIpcBindingServiceInstanceExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="RequiredIpcBindingServiceInstance">
+                        <SD GID="serviceInstanceId">4</SD>
+                        <SD GID="minorVersion">ANY</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/deployment/VelocityServiceInterfaceDeployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+            </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+            <REQUIRED-USER-DEFINED-SERVICE-INSTANCE UUID="e462bd1f-8236-4e44-bb9e-cf0d97ad91a4">
+              <SHORT-NAME>Required_SteeringAngleServiceInterfaceDeployment_service_instance</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:RequiredIpcBindingServiceInstanceExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="RequiredIpcBindingServiceInstance">
+                        <SD GID="serviceInstanceId">3</SD>
+                        <SD GID="minorVersion">ANY</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/deployment/SteeringAngleServiceInterfaceDeployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+            </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+            <REQUIRED-USER-DEFINED-SERVICE-INSTANCE UUID="c08923b7-a9c3-479f-83c5-ba2006732355">
+              <SHORT-NAME>Required_ImageServiceInterfaceDeployment_service_instance1</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:RequiredIpcBindingServiceInstanceExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="RequiredIpcBindingServiceInstance">
+                        <SD GID="serviceInstanceId">21</SD>
+                        <SD GID="minorVersion">ANY</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/deployment/ImageServiceInterfaceDeployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+            </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+            <REQUIRED-USER-DEFINED-SERVICE-INSTANCE UUID="9e037d2e-4f19-4c3c-b3d7-84a57bba8604">
+              <SHORT-NAME>Required_ImageServiceInterfaceDeployment_service_instance2</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="DvMex:RequiredIpcBindingServiceInstanceExtension">
+                    <SD GID="DvMex-version">1.0.0</SD>
+                    <SDG GID="userDefinedIpcBinding">
+                      <SDG GID="RequiredIpcBindingServiceInstance">
+                        <SD GID="serviceInstanceId">22</SD>
+                        <SD GID="minorVersion">ANY</SD>
+                      </SDG>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/deployment/ImageServiceInterfaceDeployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+            </REQUIRED-USER-DEFINED-SERVICE-INSTANCE>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="888aa4f2-f123-4b13-b2e9-dbb55460c81b">
+              <SHORT-NAME>Mapping</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="09c9af27-a55c-4cb9-87df-d877cbb4448f">
+                  <SHORT-NAME>Required_VelocityServiceInterfaceDeployment_service_instance_toPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/adas_application/adas_application/rootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/vector/adas_application/adas_application_app/RPort_VelocityService</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/vector/adas_application/adas_application_process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/deployment/Required/Required_VelocityServiceInterfaceDeployment_service_instance</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="e46f7696-02de-45ff-a921-499ecbd474b2">
+                  <SHORT-NAME>Required_ImageServiceInterfaceDeployment_service_instance1_toPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/adas_application/adas_application/rootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/vector/adas_application/adas_application_app/RPort_ImageService1</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/vector/adas_application/adas_application_process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/deployment/Required/Required_ImageServiceInterfaceDeployment_service_instance1</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="5a834f39-dd48-45f4-b48e-a86f5af97b1f">
+                  <SHORT-NAME>Required_ImageServiceInterfaceDeployment_service_instance2_toPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/adas_application/adas_application/rootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/vector/adas_application/adas_application_app/RPort_ImageService2</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/vector/adas_application/adas_application_process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/deployment/Required/Required_ImageServiceInterfaceDeployment_service_instance2</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="0b71f6e7-99eb-44af-b9ac-f5f25a74d800">
+                  <SHORT-NAME>Required_SteeringAngleServiceInterfaceDeployment_service_instance_toPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/vector/adas_application/adas_application/rootSwc</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/vector/adas_application/adas_application_app/RPort_SteeringAngleService</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/vector/adas_application/adas_application_process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="REQUIRED-USER-DEFINED-SERVICE-INSTANCE">/deployment/Required/Required_SteeringAngleServiceInterfaceDeployment_service_instance</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

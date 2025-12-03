@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="89f0bbdb-b866-4f6e-8fcc-e160ae4beb8f">
+      <SHORT-NAME>ServiceInterfaces</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="e1321837-dab3-4c03-965a-05a801515404">
+          <SHORT-NAME>PkgApplicationErrors</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="7f222764-5ca6-4dff-bba5-8f18cfff4594">
+          <SHORT-NAME>PkgHvacControl</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="b105c4a5-9729-4a6d-b6c3-78862b108d1b">
+              <SHORT-NAME>Latest</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-INTERFACE UUID="592b3b5d-7b80-48c5-a07a-3020f61362c2">
+                  <SHORT-NAME>HvacControl</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns0</SHORT-NAME>
+                      <SYMBOL>nsprototype</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns1</SHORT-NAME>
+                      <SYMBOL>nsserviceinterface</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns2</SHORT-NAME>
+                      <SYMBOL>nshvaccontrol</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <EVENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="ea47a77e-2695-4a6a-9673-1f7e8d9ca0b6">
+                      <SHORT-NAME>CompressorState</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="957d0439-fb94-4a85-bb2a-1a624780feea">
+                      <SHORT-NAME>ValvePosition</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="c28c7fff-6a4d-4539-8eba-434f704e2b4e">
+                      <SHORT-NAME>FanSpeed</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </EVENTS>
+                  <METHODS>
+                    <CLIENT-SERVER-OPERATION UUID="90e221c6-7736-428a-bee2-684c8270e91a">
+                      <SHORT-NAME>ChangeTemperature</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="a62e1724-e870-48e9-b68e-2314857b4f03">
+                          <SHORT-NAME>Value</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                    </CLIENT-SERVER-OPERATION>
+                  </METHODS>
+                </SERVICE-INTERFACE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="c0dc6c6c-48e0-4b4a-8bbe-d3206980aeda">
+                  <SHORT-NAME>PkgDeployment</SHORT-NAME>
+                  <ELEMENTS>
+                    <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT UUID="c336b0f6-fcc0-414f-bb78-67d19b462ded">
+                      <SHORT-NAME>IpcSvcIfDeploy_HvacControl</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DvMex:IpcBindingServiceInterfaceDeploymentExtension">
+                            <SDG GID="userDefinedIpcBinding">
+                              <SDG GID="IpcBindingServiceInterfaceDeployment">
+                                <SD GID="serviceInterfaceId">5000</SD>
+                                <SDG GID="serviceInterfaceVersion">
+                                  <SDG GID="Version">
+                                    <SD GID="major">1</SD>
+                                    <SD GID="minor">0</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDG>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <EVENT-DEPLOYMENTS>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="2e73f95f-7696-4bf6-8729-977ff5c84611">
+                          <SHORT-NAME>IpcEventDeploy_CompressorState</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">400</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl/CompressorState</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="c8d14b15-b378-4724-8282-8771d4cbe486">
+                          <SHORT-NAME>IpcEventDeploy_ValvePosition</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">401</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl/ValvePosition</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="010cfb19-a8f4-46a0-bcdf-27bb43284b76">
+                          <SHORT-NAME>IpcEventDeploy_FanSpeed</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">402</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl/FanSpeed</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                      </EVENT-DEPLOYMENTS>
+                      <METHOD-DEPLOYMENTS>
+                        <USER-DEFINED-METHOD-DEPLOYMENT UUID="f5b81a59-30f4-4142-8c7d-9bacf0d5211e">
+                          <SHORT-NAME>IpcMethodDeploy_ChangeTemperature</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingMethodDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingMethodDeployment">
+                                    <SD GID="methodId">500</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl/ChangeTemperature</METHOD-REF>
+                        </USER-DEFINED-METHOD-DEPLOYMENT>
+                      </METHOD-DEPLOYMENTS>
+                      <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgHvacControl/Latest/HvacControl</SERVICE-INTERFACE-REF>
+                    </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b455c802-2769-4993-8892-3afa2be0bbf1">
+          <SHORT-NAME>PkgHvacStatus</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="136fe9e0-011e-4bb9-97e9-f8b1862687cd">
+              <SHORT-NAME>Latest</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-INTERFACE UUID="cff346d4-2307-4cfa-b4a8-eb495acfd408">
+                  <SHORT-NAME>HvacStatus</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns0</SHORT-NAME>
+                      <SYMBOL>nsprototype</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns1</SHORT-NAME>
+                      <SYMBOL>nsserviceinterface</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ns2</SHORT-NAME>
+                      <SYMBOL>nshvacstatus</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <EVENTS>
+                    <VARIABLE-DATA-PROTOTYPE UUID="46392986-6b13-4c72-9830-4b3aa5f08a7a">
+                      <SHORT-NAME>CompressorStatus</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint32_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="08e5931f-2261-4af4-affc-bd8800219cb2">
+                      <SHORT-NAME>ValveStatus</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint32_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="9b19434b-3a17-4d90-b2dc-9cb5c67dfc04">
+                      <SHORT-NAME>FanRightSpeed</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint32_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                    <VARIABLE-DATA-PROTOTYPE UUID="ad5dc098-b1ad-4662-a1ef-011b2eac098c">
+                      <SHORT-NAME>FanLeftSpeed</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint32_t</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </EVENTS>
+                  <METHODS>
+                    <CLIENT-SERVER-OPERATION UUID="7e2c67ff-fba4-4047-bd40-d9f3b22794db">
+                      <SHORT-NAME>SetDegree</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="b45c01e8-62a1-4f4a-be39-d2cac39f6a25">
+                          <SHORT-NAME>Value</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+                    </CLIENT-SERVER-OPERATION>
+                  </METHODS>
+                </SERVICE-INTERFACE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="0638e39d-ce19-453b-9827-0417a0953239">
+                  <SHORT-NAME>PkgDeployment</SHORT-NAME>
+                  <ELEMENTS>
+                    <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT UUID="bd94855f-a5c3-4b4d-b05b-ff37b3d05305">
+                      <SHORT-NAME>IpcSvcIfDeploy_HvacStatus</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="DvMex:IpcBindingServiceInterfaceDeploymentExtension">
+                            <SDG GID="userDefinedIpcBinding">
+                              <SDG GID="IpcBindingServiceInterfaceDeployment">
+                                <SD GID="serviceInterfaceId">5001</SD>
+                                <SDG GID="serviceInterfaceVersion">
+                                  <SDG GID="Version">
+                                    <SD GID="major">1</SD>
+                                    <SD GID="minor">0</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDG>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <EVENT-DEPLOYMENTS>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="2f455dfa-a1c0-4f9c-bc9b-758721bda028">
+                          <SHORT-NAME>IpcEventDeploy_CompressorStatus</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">400</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus/CompressorStatus</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="85b4ad9e-7877-4b38-b781-33cbc939afee">
+                          <SHORT-NAME>IpcEventDeploy_ValveStatus</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">401</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus/ValveStatus</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="3347d87d-f5c8-4a5e-b17d-937fc7681575">
+                          <SHORT-NAME>IpcEventDeploy_FanRightSpeed</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">402</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus/FanRightSpeed</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                        <USER-DEFINED-EVENT-DEPLOYMENT UUID="8d0b7d94-a617-48b4-be85-321685c805f6">
+                          <SHORT-NAME>IpcEventDeploy_FanLeftSpeed</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingEventDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingEventDeployment">
+                                    <SD GID="eventId">403</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus/FanLeftSpeed</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                      </EVENT-DEPLOYMENTS>
+                      <METHOD-DEPLOYMENTS>
+                        <USER-DEFINED-METHOD-DEPLOYMENT UUID="016f5f2d-882e-406e-b94e-2f8d16304688">
+                          <SHORT-NAME>IpcMethodDeploy_SetDegree</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="DvMex:IpcBindingMethodDeploymentExtension">
+                                <SDG GID="userDefinedIpcBinding">
+                                  <SDG GID="IpcBindingMethodDeployment">
+                                    <SD GID="methodId">500</SD>
+                                  </SDG>
+                                </SDG>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus/SetDegree</METHOD-REF>
+                        </USER-DEFINED-METHOD-DEPLOYMENT>
+                      </METHOD-DEPLOYMENTS>
+                      <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterfaces/PkgHvacStatus/Latest/HvacStatus</SERVICE-INTERFACE-REF>
+                    </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
